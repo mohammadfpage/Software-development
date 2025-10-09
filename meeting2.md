@@ -174,8 +174,22 @@ git log --oneline --graph --all
 ```
 ## یا بازگشت کامل پروژه به حالت آن commit
 ```bash
-git reset 
+git reset
+git reset --soft <commit-hash>
+git reset --hard <commit-hash>
+git checkout <commit-hash>
+
 ```
+##تفاوت انتواع نوع بازگشت در نکته بالا
+| دستور | چه چیزی تغییر می‌کند | توضیح ساده |
+|-------|--------------------|------------|
+| `git reset <commit>` | HEAD و Staging Area | کامیت‌ها به عقب برمی‌گردند، اما تغییرات فایل‌ها در Working Directory باقی می‌مانند. |
+| `git reset --soft <commit>` | فقط HEAD | کامیت‌ها عقب می‌روند، تغییرات در Stage باقی می‌مانند. |
+| `git reset --hard <commit>` | HEAD، Stage و Working Directory | همه چیز به آن کامیت برمی‌گردد، تغییرات بعد از آن پاک می‌شوند. |
+| `git checkout <commit>` | فقط HEAD | به یک کامیت قدیمی می‌رویم برای مشاهده یا تست، شاخه اصلی تغییر نمی‌کند (Detached HEAD). |
+
+
+
 ## حذف فایل از مخزن و سیستم
 ```bash
 git rm imdex.html
