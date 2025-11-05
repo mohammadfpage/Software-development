@@ -90,6 +90,7 @@
 ```bash
 sudo apt update
 sudo apt install code
+```
 
 #### 🔹 برای توزیع‌های Fedora / RedHat:
 ```bash
